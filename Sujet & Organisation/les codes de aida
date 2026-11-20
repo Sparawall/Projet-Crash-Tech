@@ -1,0 +1,43 @@
+include <stdio.h>
+#include <stdlib.h>
+
+typedef struct _chainon {
+    int n; 
+    struct _chainon *suivant; 
+} Chainon; 
+
+typedef struct _file {
+    int taille; 
+    Chainon *tete; 
+    Chainon *queue; 
+} File; 
+
+Chainon* creationChainon(int a) {
+    Chainon *nouveau = malloc(sizeof(Chainon)); 
+    if (nouveau == NULL) {
+        exit(1); 
+    }
+    nouveau->n = a; 
+    nouveau->suivant = NULL; 
+    return nouveau; 
+}
+
+Chainon* insertDebut(Chainon* pliste, int a) {
+    Chainon *deb = creationChainon(a); 
+    if (deb == NULL) {
+        return pliste;
+    }
+    deb->suivant = pliste; 
+    return deb; 
+}
+
+
+
+// age data
+ 
+ typedef struct _age {
+    int age; 
+    int location; 
+    int genre; 
+    struct _age *suivant; 
+} Age; 
