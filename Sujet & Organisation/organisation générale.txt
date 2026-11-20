@@ -1,0 +1,73 @@
+Projet Crash Tech:
+
+
+
+
+
+
+
+
+
+
+
+
+Arborescence des fichier du programme:
+	Objectif:
+		Permet d'avoir une vue d'ensemble sur le rangement du programme.
+		Afin de pouvoir retrouvé facilement un élément, et ne pas se perdre.
+
+Projet
+     ↳ Crash Tech vX.Y(racine)
+     |     ↳ [CSV data]
+     |     |     ↳ *.csv
+     |     |
+     |     ↳ .exe
+     |     ↳ makefile
+     |     ↳ [system]
+     |           ↳ [code]
+     |           |     ↳ [headers]
+     |           |     ↳ *.h
+     |           |
+     |           ↳ [scripts]
+     |           |     ↳ *.c
+     |           |
+     |           ↳ [compiled]
+     |                 ↳ *.o
+     |     
+     ↳ [Document]
+     |     ↳ Projet_Crash_Tech_v1.0.pdf
+     |     ↳ Rapport de projet.pdf
+     |     ↳ [Ressource de développement]
+     |           ↳ [Diagramme]
+     |           |     ↳ *.drawio
+     |           |
+     |           ↳ Organisation générale.txt
+     ↳ Readme.txt
+
+   
+
+
+
+Diagramme fichier de code:
+	
+	Objectif:
+		Permet d'avoir une vue d'ensemble sur les bout de code nécessaire, et les dépendances entre eux.
+		Afin de pouvoir répartir le travail efficacement, comprendre comment ce compile le projet, et aider à débugger si besoins.
+
+	Lecture de la version: vX.Y.Z 
+		-X désigne le concept principale de l'organisation (chaque model est radicalement différent dans son organisation:
+									modification mineur, majeur et liaison entre fichier modifier)
+		-Y désigne les modification majeur de cette version X (par exemple, ajout de fichier)
+		-Z désigne les modificateur mineur de la version X.Y (par exemple, modification/précision dans un texte)
+	
+		
+		Plus la valeur est grande, plus le document est récent, avec pour ordre de priorité: de gauche a droite.
+		Plusieur vX peuvent coexister en même temps si le choix du plan n'a pas été choisi et confirmer,
+		en revanche pour Y.Z, seul le plus récent est utiliser.
+		
+		Par exemple:
+			"fichier1 v1.4.2" et "fichier2 v2.1.5"
+			Le fichier2 est plus récent, mais les deux peuvent être en utilisation, par exemple on teste le quel est le plus pratique.
+			
+			"fichier1 v1.4.2" et "fichier2 v1.1.5"
+			Le fichier1 est plus récent, et le fichier2 n'est plus utiliser car obsolète.

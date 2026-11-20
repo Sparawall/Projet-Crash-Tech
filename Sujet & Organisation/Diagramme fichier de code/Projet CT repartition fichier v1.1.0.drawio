@@ -1,0 +1,271 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="INlY1vTjEWK20r9xExzl">
+    <mxGraphModel dx="3506" dy="2369" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;arcSize=50;" value="&lt;h1&gt;&lt;font style=&quot;font-size: 60px;&quot;&gt;Démarrage&lt;/font&gt;&lt;/h1&gt;" vertex="1">
+          <mxGeometry height="130" width="380" x="170" y="-60" as="geometry" />
+        </mxCell>
+        <mxCell id="JIukGn31ZyLMFRtZAg54-5" parent="1" style="swimlane;startSize=0;fillColor=light-dark(#FFFFFF,#FF1010);fillStyle=auto;swimlaneFillColor=light-dark(#FFFFFF,#253041);" value="" vertex="1">
+          <mxGeometry height="2560" width="1840" x="-360" y="480" as="geometry">
+            <mxRectangle height="40" width="1440" x="-360" y="480" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-26" connectable="0" parent="JIukGn31ZyLMFRtZAg54-5" style="group;fillColor=none;fontColor=#000000;strokeColor=none;fillStyle=auto;" value="" vertex="1">
+          <mxGeometry height="360" width="280" x="580" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-20" parent="oNkUzcDnxCvFuDzx-d23-26" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=light-dark(#DAE8FC,#B0B0B0);strokeColor=light-dark(#6C8EBF,#858CA7);" value="" vertex="1">
+          <mxGeometry height="360" width="280" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-41" parent="oNkUzcDnxCvFuDzx-d23-26" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(204, 0, 0));&quot;&gt;Contenue&lt;/span&gt;&lt;/h1&gt;&lt;p&gt;Ce fichier contient le main du projet.&lt;/p&gt;&lt;p&gt;Reçoit l&#39;entrée utilisateur lors du démarrage du programme.&lt;/p&gt;&lt;p&gt;Il exécute, les bouts de programme correspondant a l&#39;entrée utilisateur.&lt;/p&gt;&lt;p&gt;il y en a 3 principeaux&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(#000000, var(--ge-light-color, #ffffff));&quot;&gt;(voir le PDF Projet_Crash_Tech)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Libère toutes les allocations si il y en a.&lt;/p&gt;&lt;p&gt;Termine le programme a la fin.&lt;/p&gt;" vertex="1">
+          <mxGeometry height="320" width="260" x="10" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-32" collapsed="1" parent="oNkUzcDnxCvFuDzx-d23-26" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;strokeColor=light-dark(#6C8EBF,#858CA7);" value="&lt;h2&gt;Main&lt;/h2&gt;" vertex="1">
+          <mxGeometry height="30" width="160" x="60" as="geometry">
+            <mxRectangle height="160" width="160" x="60" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-33" parent="oNkUzcDnxCvFuDzx-d23-32" style="text;strokeColor=none;fillColor=default;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;opacity=80;opacityGroup=1;" value="&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(102, 255, 255));&quot;&gt;Role&lt;/span&gt;: fonction principale" vertex="1">
+          <mxGeometry height="30" width="160" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-34" parent="oNkUzcDnxCvFuDzx-d23-32" style="text;strokeColor=none;fillColor=default;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;opacity=80;opacityGroup=1;" value="&lt;div&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(102, 255, 255));&quot;&gt;Description&lt;/span&gt;:&lt;/div&gt;&lt;div&gt;prend&amp;nbsp; en paramètre&lt;/div&gt;&lt;div&gt;- une commande de traitement&lt;/div&gt;&lt;div&gt;-un nom de fichier .csv&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="160" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-48" connectable="0" parent="JIukGn31ZyLMFRtZAg54-5" style="group;fillColor=none;fontColor=#000000;strokeColor=none;fillStyle=auto;" value="" vertex="1">
+          <mxGeometry height="360" width="280" x="580" y="2015" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-49" parent="oNkUzcDnxCvFuDzx-d23-48" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=light-dark(#DAE8FC,#B0B0B0);strokeColor=light-dark(#6C8EBF,#858CA7);" value="" vertex="1">
+          <mxGeometry height="360" width="280" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-50" parent="oNkUzcDnxCvFuDzx-d23-48" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(204, 0, 0));&quot;&gt;Contenue&lt;/span&gt;&lt;/h1&gt;&lt;p&gt;Ce fichier permet:&lt;br&gt;&lt;/p&gt;&lt;p&gt;-d&#39;ouvrir un fichier .csv&lt;/p&gt;&lt;p&gt;-fermer un fichier .csv&lt;/p&gt;&lt;p&gt;-lire une cases de données (ne fait que lire, ne traite pas selon le cahier des charges)&lt;/p&gt;&lt;p&gt;-lire une ligne complète de données&lt;/p&gt;&lt;p&gt;-lire un fichier entier de données&lt;/p&gt;&lt;p&gt;-renvoyer les bonnes donnée&lt;/p&gt;" vertex="1">
+          <mxGeometry height="320" width="260" x="10" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-51" collapsed="1" parent="oNkUzcDnxCvFuDzx-d23-48" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;strokeColor=light-dark(#6C8EBF,#858CA7);" value="&lt;h2&gt;Reader CSV&lt;/h2&gt;" vertex="1">
+          <mxGeometry height="30" width="160" x="60" as="geometry">
+            <mxRectangle height="160" width="160" x="60" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-52" parent="oNkUzcDnxCvFuDzx-d23-51" style="text;strokeColor=none;fillColor=default;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;opacity=80;opacityGroup=1;" value="&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(102, 255, 255));&quot;&gt;Role&lt;/span&gt;: fichier de lecture .csv" vertex="1">
+          <mxGeometry height="30" width="160" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-53" parent="oNkUzcDnxCvFuDzx-d23-51" style="text;strokeColor=none;fillColor=default;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;opacity=80;opacityGroup=1;" value="&lt;div&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(102, 255, 255));&quot;&gt;Description&lt;/span&gt;:&lt;/div&gt;&lt;div&gt;contient les fonctions nécessaire a l&#39;ouverture/fermeture d&#39;un fichier, pour lire et retenir les données.&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="160" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-54" connectable="0" parent="JIukGn31ZyLMFRtZAg54-5" style="group;fillColor=none;fontColor=#000000;strokeColor=none;fillStyle=auto;" value="" vertex="1">
+          <mxGeometry height="360" width="280" x="580" y="1435" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-55" parent="oNkUzcDnxCvFuDzx-d23-54" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=light-dark(#DAE8FC,#B0B0B0);strokeColor=light-dark(#6C8EBF,#858CA7);" value="" vertex="1">
+          <mxGeometry height="360" width="280" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-56" parent="oNkUzcDnxCvFuDzx-d23-54" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(204, 0, 0));&quot;&gt;Contenue&lt;/span&gt;&lt;/h1&gt;&lt;p&gt;Ce fichier définira les structures utiles aux éléments des accidents&lt;/p&gt;&lt;p&gt;Il utilise Reader CSV et permet:&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(#000000, var(--ge-light-color, #ffffff));&quot;&gt;-de lire correctement une cases de données selon le cahier des charges (voir le PDF Projet_Crash_Tech)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;-lire correctement une ligne complète de données&lt;/p&gt;&lt;p&gt;-lire correctement un fichier entier de données&lt;/p&gt;&lt;p&gt;-retenir correctement dans le programme les données&lt;/p&gt;" vertex="1">
+          <mxGeometry height="320" width="260" x="10" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-57" collapsed="1" parent="oNkUzcDnxCvFuDzx-d23-54" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;strokeColor=light-dark(#6C8EBF,#858CA7);" value="&lt;h2&gt;Crash Reader&lt;/h2&gt;" vertex="1">
+          <mxGeometry height="30" width="160" x="60" as="geometry">
+            <mxRectangle height="180" width="160" x="60" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-58" parent="oNkUzcDnxCvFuDzx-d23-57" style="text;strokeColor=none;fillColor=default;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;opacity=80;opacityGroup=1;" value="&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(102, 255, 255));&quot;&gt;Role&lt;/span&gt;: fichier de lecture de CVG trié selon le cahier des charges" vertex="1">
+          <mxGeometry height="50" width="160" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-59" parent="oNkUzcDnxCvFuDzx-d23-57" style="text;strokeColor=none;fillColor=default;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;opacity=80;opacityGroup=1;" value="&lt;div&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(102, 255, 255));&quot;&gt;Description&lt;/span&gt;:&lt;/div&gt;&lt;div&gt;nécessite le fichier Reader CSV, pour lire le fichier de données et enregistrer correctement les données&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="160" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-61" edge="1" parent="JIukGn31ZyLMFRtZAg54-5" source="oNkUzcDnxCvFuDzx-d23-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;defaultLabelBackgroundColor=page;labelPadding=0 4;strokeColor=light-dark(#000000,#FF5EFF);" target="oNkUzcDnxCvFuDzx-d23-49">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-62" connectable="0" parent="JIukGn31ZyLMFRtZAg54-5" style="group;fillColor=none;fontColor=#000000;strokeColor=none;fillStyle=auto;" value="" vertex="1">
+          <mxGeometry height="360" width="280" x="180" y="635" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-63" parent="oNkUzcDnxCvFuDzx-d23-62" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=light-dark(#DAE8FC,#B0B0B0);strokeColor=light-dark(#6C8EBF,#858CA7);" value="" vertex="1">
+          <mxGeometry height="360" width="280" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-64" parent="oNkUzcDnxCvFuDzx-d23-62" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(204, 0, 0));&quot;&gt;Contenue&lt;/span&gt;&lt;/h1&gt;&lt;p&gt;Ce fichier contient:&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(#000000, var(--ge-light-color, #ffffff));&quot;&gt;-le programme &quot;principale&quot;, d&#39;analyse statistiques d&#39;accidents par année&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(#000000, var(--ge-light-color, #ffffff));&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(#000000, var(--ge-light-color, #ffffff));&quot;&gt;(voir le PDF Projet_Crash_Tech)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(#000000, var(--ge-light-color, #ffffff));&quot;&gt;-un programme de sélection de l&#39;année par l&#39;utilisateur&lt;/span&gt;&lt;/p&gt;&lt;p&gt;-un programme de lecture et d&#39;organisation des données (en tableau statique d&#39;année)&lt;span style=&quot;background-color: transparent; color: light-dark(#000000, var(--ge-light-color, #ffffff));&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;-un programme d&#39;affichage de la sélection&lt;/p&gt;" vertex="1">
+          <mxGeometry height="320" width="260" x="10" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-65" collapsed="1" parent="oNkUzcDnxCvFuDzx-d23-62" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;strokeColor=light-dark(#6C8EBF,#858CA7);" value="&lt;h2&gt;Analysis YEAR_DATA&lt;/h2&gt;" vertex="1">
+          <mxGeometry height="50" width="160" x="60" as="geometry">
+            <mxRectangle height="200" width="160" x="60" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-66" parent="oNkUzcDnxCvFuDzx-d23-65" style="text;strokeColor=none;fillColor=default;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;opacity=80;opacityGroup=1;" value="&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(102, 255, 255));&quot;&gt;Role&lt;/span&gt;: fichier d&#39;analyse par année" vertex="1">
+          <mxGeometry height="50" width="160" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-67" parent="oNkUzcDnxCvFuDzx-d23-65" style="text;strokeColor=none;fillColor=default;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;opacity=80;opacityGroup=1;" value="&lt;div&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(102, 255, 255));&quot;&gt;Description&lt;/span&gt;:&lt;/div&gt;&lt;div&gt;permet de gérer l&#39;analyse des données en fonction de l&#39;année&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="160" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-68" connectable="0" parent="JIukGn31ZyLMFRtZAg54-5" style="group;fillColor=none;fontColor=#000000;strokeColor=none;fillStyle=auto;" value="" vertex="1">
+          <mxGeometry height="360" width="280" x="580" y="635" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-69" parent="oNkUzcDnxCvFuDzx-d23-68" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=light-dark(#DAE8FC,#B0B0B0);strokeColor=light-dark(#6C8EBF,#858CA7);" value="" vertex="1">
+          <mxGeometry height="360" width="280" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-70" parent="oNkUzcDnxCvFuDzx-d23-68" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(204, 0, 0));&quot;&gt;Contenue&lt;/span&gt;&lt;/h1&gt;&lt;p&gt;Ce fichier contient:&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(#000000, var(--ge-light-color, #ffffff));&quot;&gt;-le programme &quot;principale&quot;, d&#39;analyse statistiques d&#39;accidents par âge&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(#000000, var(--ge-light-color, #ffffff));&quot;&gt;(voir le PDF Projet_Crash_Tech)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(#000000, var(--ge-light-color, #ffffff));&quot;&gt;-un programme de sélection de filtres&lt;/span&gt;&lt;/p&gt;&lt;p&gt;-un programme de lecture et d&#39;organisation des données (en liste chainée d&#39;âge)&lt;span style=&quot;background-color: transparent; color: light-dark(#000000, var(--ge-light-color, #ffffff));&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;-un programme d&#39;affichage de la sélection&lt;/p&gt;" vertex="1">
+          <mxGeometry height="320" width="260" x="10" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-71" collapsed="1" parent="oNkUzcDnxCvFuDzx-d23-68" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;strokeColor=light-dark(#6C8EBF,#858CA7);" value="&lt;h2&gt;Analysis AGE_DATA&lt;/h2&gt;" vertex="1">
+          <mxGeometry height="50" width="160" x="60" as="geometry">
+            <mxRectangle height="200" width="160" x="60" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-72" parent="oNkUzcDnxCvFuDzx-d23-71" style="text;strokeColor=none;fillColor=default;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;opacity=80;opacityGroup=1;" value="&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(102, 255, 255));&quot;&gt;Role&lt;/span&gt;: fichier d&#39;analyse par age" vertex="1">
+          <mxGeometry height="50" width="160" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-73" parent="oNkUzcDnxCvFuDzx-d23-71" style="text;strokeColor=none;fillColor=default;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;opacity=80;opacityGroup=1;" value="&lt;div&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(102, 255, 255));&quot;&gt;Description&lt;/span&gt;:&lt;/div&gt;&lt;div&gt;permet de gérer l&#39;analyse des données en fonction de l&#39;âge des personnes impliqué dans l&#39;accident&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="160" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-74" connectable="0" parent="JIukGn31ZyLMFRtZAg54-5" style="group;fillColor=none;fontColor=#000000;strokeColor=none;fillStyle=auto;" value="" vertex="1">
+          <mxGeometry height="360" width="280" x="980" y="635" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-75" parent="oNkUzcDnxCvFuDzx-d23-74" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=light-dark(#DAE8FC,#B0B0B0);strokeColor=light-dark(#6C8EBF,#858CA7);" value="" vertex="1">
+          <mxGeometry height="360" width="280" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-76" parent="oNkUzcDnxCvFuDzx-d23-74" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(204, 0, 0));&quot;&gt;Contenue&lt;/span&gt;&lt;/h1&gt;&lt;p&gt;Ce fichier contient:&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(#000000, var(--ge-light-color, #ffffff));&quot;&gt;-le programme &quot;principale&quot;, d&#39;analyse statistiques d&#39;accidents par crash&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(#000000, var(--ge-light-color, #ffffff));&quot;&gt;(voir le PDF Projet_Crash_Tech)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(#000000, var(--ge-light-color, #ffffff));&quot;&gt;-un programme de sélection du crash&lt;/span&gt;&lt;/p&gt;&lt;p&gt;-un programme de lecture et d&#39;organisation des données (en AVL de crash)&lt;span style=&quot;background-color: transparent; color: light-dark(#000000, var(--ge-light-color, #ffffff));&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;-un programme d&#39;affichage de la sélection&lt;/p&gt;" vertex="1">
+          <mxGeometry height="320" width="260" x="10" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-77" collapsed="1" parent="oNkUzcDnxCvFuDzx-d23-74" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;strokeColor=light-dark(#6C8EBF,#858CA7);" value="&lt;h2&gt;Analysis CRASH_DATA&lt;/h2&gt;" vertex="1">
+          <mxGeometry height="50" width="160" x="60" as="geometry">
+            <mxRectangle height="200" width="160" x="60" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-78" parent="oNkUzcDnxCvFuDzx-d23-77" style="text;strokeColor=none;fillColor=default;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;opacity=80;opacityGroup=1;" value="&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(102, 255, 255));&quot;&gt;Role&lt;/span&gt;: fichier d&#39;analyse par crash (année et collision_id)" vertex="1">
+          <mxGeometry height="50" width="160" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-79" parent="oNkUzcDnxCvFuDzx-d23-77" style="text;strokeColor=none;fillColor=default;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;opacity=80;opacityGroup=1;" value="&lt;div&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(102, 255, 255));&quot;&gt;Description&lt;/span&gt;:&lt;/div&gt;&lt;div&gt;permet de gérer l&#39;analyse des données en fonction du crash étudier (année et collision_id)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="160" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-80" edge="1" parent="JIukGn31ZyLMFRtZAg54-5" source="oNkUzcDnxCvFuDzx-d23-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;defaultLabelBackgroundColor=page;labelPadding=0 4;strokeColor=light-dark(#000000,#FF5EFF);" target="oNkUzcDnxCvFuDzx-d23-63">
+          <mxGeometry relative="1" x="0.0351" as="geometry">
+            <Array as="points">
+              <mxPoint x="720" y="535" />
+              <mxPoint x="320" y="535" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-81" edge="1" parent="JIukGn31ZyLMFRtZAg54-5" source="oNkUzcDnxCvFuDzx-d23-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;defaultLabelBackgroundColor=page;labelPadding=0 4;strokeColor=light-dark(#000000,#FF5EFF);" target="oNkUzcDnxCvFuDzx-d23-69">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-82" edge="1" parent="JIukGn31ZyLMFRtZAg54-5" source="oNkUzcDnxCvFuDzx-d23-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;defaultLabelBackgroundColor=page;labelPadding=0 4;strokeColor=light-dark(#000000,#FF5EFF);" target="oNkUzcDnxCvFuDzx-d23-75">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="720" y="535" />
+              <mxPoint x="1120" y="535" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-83" edge="1" parent="JIukGn31ZyLMFRtZAg54-5" source="oNkUzcDnxCvFuDzx-d23-64" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;strokeColor=light-dark(#000000,#FF5EFF);" target="oNkUzcDnxCvFuDzx-d23-57">
+          <mxGeometry relative="1" x="-0.0357" as="geometry">
+            <Array as="points">
+              <mxPoint x="320" y="1145" />
+              <mxPoint x="720" y="1145" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-84" edge="1" parent="JIukGn31ZyLMFRtZAg54-5" source="oNkUzcDnxCvFuDzx-d23-70" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;defaultLabelBackgroundColor=page;labelPadding=0 4;strokeColor=light-dark(#000000,#FF5EFF);" target="oNkUzcDnxCvFuDzx-d23-55">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-85" edge="1" parent="JIukGn31ZyLMFRtZAg54-5" source="oNkUzcDnxCvFuDzx-d23-76" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;strokeColor=light-dark(#000000,#FF5EFF);" target="oNkUzcDnxCvFuDzx-d23-57">
+          <mxGeometry relative="1" x="-0.0357" as="geometry">
+            <Array as="points">
+              <mxPoint x="1120" y="1145" />
+              <mxPoint x="720" y="1145" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-86" connectable="0" parent="JIukGn31ZyLMFRtZAg54-5" style="group;fillColor=none;fontColor=#000000;strokeColor=none;fillStyle=auto;" value="" vertex="1">
+          <mxGeometry height="360" width="280" x="1361" y="1435" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-87" parent="oNkUzcDnxCvFuDzx-d23-86" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=light-dark(#DAE8FC,#B0B0B0);strokeColor=light-dark(#6C8EBF,#858CA7);" value="" vertex="1">
+          <mxGeometry height="360" width="280" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-88" parent="oNkUzcDnxCvFuDzx-d23-86" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(204, 0, 0));&quot;&gt;Contenue&lt;/span&gt;&lt;/h1&gt;&lt;p&gt;Ce fichier permet:&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(#000000, var(--ge-light-color, #ffffff));&quot;&gt;-de créer des AVL&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(#000000, var(--ge-light-color, #ffffff));&quot;&gt;-de supprimer des AVL&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(#000000, var(--ge-light-color, #ffffff));&quot;&gt;-d&#39;ajouter des valeur&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(#000000, var(--ge-light-color, #ffffff));&quot;&gt;-de supprimer des valeur&lt;/span&gt;&lt;/p&gt;&lt;p&gt;-de gérer l&#39;équilibre des AVL&lt;/p&gt;&lt;p&gt;-de gérer la lecture des AVL&lt;/p&gt;" vertex="1">
+          <mxGeometry height="320" width="260" x="10" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-89" collapsed="1" parent="oNkUzcDnxCvFuDzx-d23-86" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;strokeColor=light-dark(#6C8EBF,#858CA7);" value="&lt;h2&gt;AVL&lt;/h2&gt;" vertex="1">
+          <mxGeometry height="30" width="160" x="60" as="geometry">
+            <mxRectangle height="180" width="160" x="60" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-90" parent="oNkUzcDnxCvFuDzx-d23-89" style="text;strokeColor=none;fillColor=default;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;opacity=80;opacityGroup=1;" value="&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(102, 255, 255));&quot;&gt;Role&lt;/span&gt;: fichier pour avoir des AVL" vertex="1">
+          <mxGeometry height="50" width="160" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-91" parent="oNkUzcDnxCvFuDzx-d23-89" style="text;strokeColor=none;fillColor=default;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;opacity=80;opacityGroup=1;" value="&lt;div&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(102, 255, 255));&quot;&gt;Description&lt;/span&gt;:&lt;/div&gt;&lt;div&gt;permet d&#39;avoir une utilisation complète d&#39;AVL&amp;nbsp;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="160" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-92" connectable="0" parent="JIukGn31ZyLMFRtZAg54-5" style="group;fillColor=none;fontColor=#000000;strokeColor=none;fillStyle=auto;" value="" vertex="1">
+          <mxGeometry height="360" width="280" x="980" y="1435" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-93" parent="oNkUzcDnxCvFuDzx-d23-92" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=light-dark(#DAE8FC,#B0B0B0);strokeColor=light-dark(#6C8EBF,#858CA7);" value="" vertex="1">
+          <mxGeometry height="360" width="280" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-94" parent="oNkUzcDnxCvFuDzx-d23-92" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(204, 0, 0));&quot;&gt;Contenue&lt;/span&gt;&lt;/h1&gt;&lt;p&gt;Ce fichier permet:&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(#000000, var(--ge-light-color, #ffffff));&quot;&gt;-de créer des Listes Chaînée&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(#000000, var(--ge-light-color, #ffffff));&quot;&gt;-de supprimer des Listes Chaînée&lt;/span&gt;&lt;/p&gt;&lt;p&gt;-d&#39;ajouter des valeurs&lt;/p&gt;&lt;p&gt;-de supprimer des valeurs&lt;/p&gt;&lt;p&gt;-de gérer la lecture des Listes Chaînée&lt;/p&gt;" vertex="1">
+          <mxGeometry height="320" width="260" x="10" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-95" collapsed="1" parent="oNkUzcDnxCvFuDzx-d23-92" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;strokeColor=light-dark(#6C8EBF,#858CA7);" value="&lt;h2&gt;Liste Chaînée&lt;/h2&gt;" vertex="1">
+          <mxGeometry height="30" width="160" x="60" as="geometry">
+            <mxRectangle height="180" width="160" x="60" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-96" parent="oNkUzcDnxCvFuDzx-d23-95" style="text;strokeColor=none;fillColor=default;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;opacity=80;opacityGroup=1;" value="&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(102, 255, 255));&quot;&gt;Role&lt;/span&gt;: fichier pour avoir des Liste Chaînée" vertex="1">
+          <mxGeometry height="50" width="160" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-97" parent="oNkUzcDnxCvFuDzx-d23-95" style="text;strokeColor=none;fillColor=default;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;opacity=80;opacityGroup=1;" value="&lt;div&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(102, 255, 255));&quot;&gt;Description&lt;/span&gt;:&lt;/div&gt;&lt;div&gt;permet d&#39;avoir une utilisation complète de Liste Chaînée&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="160" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-98" edge="1" parent="JIukGn31ZyLMFRtZAg54-5" source="oNkUzcDnxCvFuDzx-d23-76" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;defaultLabelBackgroundColor=page;labelPadding=0 4;strokeColor=light-dark(#000000,#3DFF3D);" target="oNkUzcDnxCvFuDzx-d23-87">
+          <mxGeometry relative="1" x="-0.0015" as="geometry">
+            <Array as="points">
+              <mxPoint x="1130" y="1135" />
+              <mxPoint x="1501" y="1135" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-100" edge="1" parent="JIukGn31ZyLMFRtZAg54-5" source="oNkUzcDnxCvFuDzx-d23-70" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;strokeColor=light-dark(#000000,#3DFF3D);" target="oNkUzcDnxCvFuDzx-d23-95">
+          <mxGeometry relative="1" x="0.0746" as="geometry">
+            <Array as="points">
+              <mxPoint x="730" y="1135" />
+              <mxPoint x="1120" y="1135" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JIukGn31ZyLMFRtZAg54-2" edge="1" parent="JIukGn31ZyLMFRtZAg54-5" source="oNkUzcDnxCvFuDzx-d23-76" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.563;entryY=-0.017;entryDx=0;entryDy=0;entryPerimeter=0;defaultLabelBackgroundColor=page;labelPadding=0 4;strokeColor=light-dark(#000000,#3DFF3D);" target="oNkUzcDnxCvFuDzx-d23-95">
+          <mxGeometry relative="1" x="0.0096" as="geometry">
+            <Array as="points">
+              <mxPoint x="1130" y="1055" />
+              <mxPoint x="1130" y="1055" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oNkUzcDnxCvFuDzx-d23-2" edge="1" parent="1" source="oNkUzcDnxCvFuDzx-d23-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;labelPadding=0 4;strokeColor=light-dark(#000000,#FF5EFF);" target="oNkUzcDnxCvFuDzx-d23-20">
+          <mxGeometry relative="1" x="-0.4762" as="geometry">
+            <mxPoint x="320" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JIukGn31ZyLMFRtZAg54-9" connectable="0" parent="1" style="group;fillColor=none;fontColor=#000000;strokeColor=none;fillStyle=auto;" value="" vertex="1">
+          <mxGeometry height="360" width="280" x="-840" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="JIukGn31ZyLMFRtZAg54-10" parent="JIukGn31ZyLMFRtZAg54-9" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=light-dark(#DAE8FC,#B0B0B0);strokeColor=light-dark(#6C8EBF,#858CA7);" value="" vertex="1">
+          <mxGeometry height="360" width="280" as="geometry" />
+        </mxCell>
+        <mxCell id="JIukGn31ZyLMFRtZAg54-11" parent="JIukGn31ZyLMFRtZAg54-9" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(204, 0, 0));&quot;&gt;Contenue&lt;/span&gt;&lt;/h1&gt;&lt;p&gt;Ce fichier permet:&lt;/p&gt;&lt;p&gt;-d&#39;accéder aux .c et .h&lt;/p&gt;&lt;p&gt;-permet de crée des .o&lt;/p&gt;&lt;p&gt;-permet de supprimer des .o&lt;/p&gt;&lt;p&gt;-permet de réunir les .o en éxecutable&lt;/p&gt;&lt;p&gt;-permet de supprimer l&#39;executable&lt;/p&gt;" vertex="1">
+          <mxGeometry height="320" width="260" x="10" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="JIukGn31ZyLMFRtZAg54-12" collapsed="1" parent="JIukGn31ZyLMFRtZAg54-9" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;strokeColor=light-dark(#6C8EBF,#858CA7);" value="&lt;h2&gt;Makefile&lt;/h2&gt;" vertex="1">
+          <mxGeometry height="30" width="160" x="60" as="geometry">
+            <mxRectangle height="160" width="160" x="60" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JIukGn31ZyLMFRtZAg54-13" parent="JIukGn31ZyLMFRtZAg54-12" style="text;strokeColor=none;fillColor=default;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;opacity=80;opacityGroup=1;" value="&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(102, 255, 255));&quot;&gt;Role&lt;/span&gt;: compilateur du projet" vertex="1">
+          <mxGeometry height="30" width="160" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JIukGn31ZyLMFRtZAg54-14" parent="JIukGn31ZyLMFRtZAg54-12" style="text;strokeColor=none;fillColor=default;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;opacity=80;opacityGroup=1;" value="&lt;div&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(102, 255, 255));&quot;&gt;Description&lt;/span&gt;:&lt;/div&gt;&lt;div&gt;à accès au .c et .h du projet ainsi qu&#39;un dossier pour les .o produit&lt;/div&gt;&lt;div&gt;permet la gestion de la compilation du projet&lt;span style=&quot;background-color: transparent; color: light-dark(#000000, var(--ge-light-color, #ffffff));&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="160" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="JIukGn31ZyLMFRtZAg54-17" edge="1" parent="1" source="JIukGn31ZyLMFRtZAg54-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;strokeColor=light-dark(#000000,#1AEBFF);exitX=1;exitY=0.5;exitDx=0;exitDy=15;exitPerimeter=0;" target="JIukGn31ZyLMFRtZAg54-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
