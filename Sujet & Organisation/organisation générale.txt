@@ -26,10 +26,10 @@ Projet
      |     ↳ [system]
      |           ↳ [code]
      |           |     ↳ [headers]
-     |           |     ↳ *.h
+     |           |           ↳ *.h
      |           |
-     |           ↳ [scripts]
-     |           |     ↳ *.c
+     |           |     ↳ [scripts]
+     |           |           ↳ *.c
      |           |
      |           ↳ [compiled]
      |                 ↳ *.o
