@@ -1,0 +1,7 @@
+typedef struct _age {
+int age; 
+
+int type_usager[4];
+int genre[3]; 
+stuct _age *suivant; 
+} Age; 
