@@ -1,7 +1,46 @@
 typedef struct _age {
-int age; 
-
-int type_usager[4];
-int genre[3]; 
-stuct _age *suivant; 
+    int age; 
+    int total; 
+    int type_usager[4];
+    int genre[2]; 
+    struct _age *suivant; 
 } Age; 
+
+typedef struct _liste {
+int taille; 
+Age *tete; 
+} Liste; 
+
+Age *creer_age (int age){
+    Age *nouveau = malloc(sizeof(age)); 
+      if(nouveau==NULL){
+        exit(1); 
+      } 
+  nouveau->age = age; 
+  nouveau->total = 0; 
+
+    for(int i=0; i < 4; i++){
+    nouveau->type_usager[i] = 0; 
+
+    for(int i=0; i < 3; i++){
+      nouveau->genre[i] = 0; 
+
+      nouveau->suivant = NULL; 
+      return nouveau; 
+
+}
+
+
+Age *rechercher_age  (Liste *a, int age ){
+  Age *courant = a-> tete; 
+    while (courant !=NULL){
+    if (courant-> age == age) {
+    return courant; 
+    courant = courant -> suivant; 
+} else {
+return NULL; 
+}
+
+
+
+
