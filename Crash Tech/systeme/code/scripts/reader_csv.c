@@ -53,8 +53,15 @@ LigneCSV initLigneCSV(FILE* fichier, int nb_cellule){
 
 
 FILE* csvOuvreLecture(char* nom){
-	ACCES_DOSSIER_CSV();
-	FILE* fichier = fopen(nom, "r");
+	char chemin[20];
+	strcpy(chemin, CHEMIN_CSV);
+	strcat(chemin, nom);
+	printf("\n%s\n", chemin);
+	
+	
+	
+	
+	FILE* fichier = fopen(chemin, "r");
 	
 	if(fichier == NULL){
 		printf("ATTENTION! le fichier n'existe pas, avez-vous données le bon nom?\n");

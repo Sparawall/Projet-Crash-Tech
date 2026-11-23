@@ -5,13 +5,17 @@
 
 
 
-#ifdef _WIN32
+#include <stdio.h>
+#include <string.h>
 
-#include <windows.h>
-#define ACCES_DOSSIER_CSV() SetCurrentDirectoryA("../../../donne CSV")
+#include <stdlib.h>//pour le exit
 
-#else
-#define ACCES_DOSSIER_CSV() opendir("../../../donne CSV");
+
+
+
+
+#define CHEMIN_CSV "../../../donne CSV/"
+
 
 #endif
 
@@ -22,11 +26,6 @@
 
 
 
-
-#include <stdio.h>
-#include <string.h>
-
-#include <stdlib.h>//pour le exit
 
 /*
 
@@ -45,4 +44,3 @@ typedef struct{
 }LigneCSV;
 */
 
-#endif
