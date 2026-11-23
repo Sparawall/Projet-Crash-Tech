@@ -42,5 +42,16 @@ return NULL;
 }
 
 
+int ajouter_victime (Liste *a){
+int age; 
+int type_usager; 
+int genre; 
+
+Age *nouveau= rechercher_age(a->tete , age); 
+if( nouveau== NULL) {
+
+
+
+
 
 
