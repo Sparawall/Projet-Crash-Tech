@@ -1,57 +1,173 @@
+
+
 typedef struct _age {
-    int age; 
-    int total; 
-    int type_usager[4];
-    int genre[2]; 
-    struct _age *suivant; 
-} Age; 
+    int age;
+    int total;
+    int hommes;
+    int femmes;
+    int type_usager[4]; /* 1: conducteur, 2: passager, 3: pieton */
+    struct _age *suivant;
+} Age;
 
 typedef struct _liste {
-int taille; 
-Age *tete; 
-} Liste; 
+    Age *tete;
+} Liste;
 
-Age *creer_age (int age){
-    Age *nouveau = malloc(sizeof(age)); 
-      if(nouveau==NULL){
-        exit(1); 
-      } 
-  nouveau->age = age; 
-  nouveau->total = 0; 
-
-    for(int i=0; i < 4; i++){
-    nouveau->type_usager[i] = 0; 
-
-    for(int i=0; i < 3; i++){
-      nouveau->genre[i] = 0; 
-
-      nouveau->suivant = NULL; 
-      return nouveau; 
-
+/* Cherche si l'age existe deja dans la liste */
+Age *chercher_age(Liste *liste, int age) {
+    Age *actuel = liste->tete;
+    while (actuel != NULL) {
+        if (actuel->age == age) {
+            return actuel;
+        }
+        actuel = actuel->suivant;
+    }
+    return NULL;
 }
 
+/* Cree un nouveau chainon pour un age */
+Age *creer_chainon(int age) {
+    Age *nouveau = malloc(sizeof(Age));
+    if (nouveau == NULL) {
+        return NULL;
+    }
 
-Age *rechercher_age  (Liste *a, int age ){
-  Age *courant = a-> tete; 
-    while (courant !=NULL){
-    if (courant-> age == age) {
-    return courant; 
-    courant = courant -> suivant; 
-} else {
-return NULL; 
+    nouveau->age = age;
+    nouveau->total = 0;
+    nouveau->hommes = 0;
+    nouveau->femmes = 0;
+    nouveau->suivant = NULL;
+
+    for (int i = 0; i < 4; i++) {
+        nouveau->type_usager[i] = 0;
+    }
+
+    return nouveau;
 }
 
+/* Ajoute une victime dans la liste triee par age croissant */
+void ajouter_victime(Liste *liste, int age, int type, int genre) {
+    Age *noeud = chercher_age(liste, age);
 
-int ajouter_victime (Liste *a){
-int age; 
-int type_usager; 
-int genre; 
+    if (noeud == NULL) {
+        noeud = creer_chainon(age);
+        if (noeud == NULL) {
+            return;
+        }
 
-Age *nouveau= rechercher_age(a->tete , age); 
-if( nouveau== NULL) {
+        if (liste->tete == NULL || age < liste->tete->age) {
+            noeud->suivant = liste->tete;
+            liste->tete = noeud;
+        } else {
+            Age *actuel = liste->tete;
+            while (actuel->suivant != NULL && actuel->suivant->age < age) {
+                actuel = actuel->suivant;
+            }
+            noeud->suivant = actuel->suivant;
+            actuel->suivant = noeud;
+        }
+    }
 
+    noeud->total++;
+    if (type >= 1 && type <= 3) {
+        noeud->type_usager[type]++;
+    }
+    if (genre == 1) {
+        noeud->hommes++;
+    } else if (genre == 2) {
+        noeud->femmes++;
+    }
+}
 
+/* Calcule le nombre total de victimes de toute la liste */
+int total_victimes(Liste *liste) {
+    int somme = 0;
+    Age *actuel = liste->tete;
+    while (actuel != NULL) {
+        somme += actuel->total;
+        actuel = actuel->suivant;
+    }
+    return somme;
+}
 
+/* Calcule combien de '#' afficher pour un pourcentage */
+int nb_caracteres(double pourcentage) {
+    int n = (int)(pourcentage / 5.0); /* 1 '#' pour 5% */
+    if (pourcentage > 0.0 && n == 0) {
+        n = 1;
+    }
+    if (n > LARGEUR_BARRE) {
+        n = LARGEUR_BARRE;
+    }
+    return n;
+}
 
+/* Affiche une ligne de la pyramide */
+void afficher_ligne(Age *noeud, int total_general) {
+    double pct_h = (noeud->hommes * 100.0) / total_general;
+    double pct_f = (noeud->femmes * 100.0) / total_general;
 
+    int barres_h = nb_caracteres(pct_h);
+    int barres_f = nb_caracteres(pct_f);
+
+    /* Gauche : espaces puis '#' colles au centre */
+    for (int i = 0; i < LARGEUR_BARRE - barres_h; i++) {
+        printf(" ");
+    }
+    for (int i = 0; i < barres_h; i++) {
+        printf("#");
+    }
+
+    printf(" | %4d  | ", noeud->age);
+
+    /* Droite : '#' colles au centre puis espaces */
+    for (int i = 0; i < barres_f; i++) {
+        printf("#");
+    }
+    for (int i = 0; i < LARGEUR_BARRE - barres_f; i++) {
+        printf(" ");
+    }
+
+    printf(" | H: %2d (%4.1f%%) | F: %2d (%4.1f%%)\n",
+           noeud->hommes, pct_h, noeud->femmes, pct_f);
+}
+
+/* Parcours recursif pour afficher les plus grands ages en haut et les plus jeunes en bas */
+void afficher_du_haut(Age *noeud, int total_general) {
+    if (noeud == NULL) {
+        return;
+    }
+    afficher_du_haut(noeud->suivant, total_general);
+    afficher_ligne(noeud, total_general);
+}
+
+/* Affiche la pyramide complete */
+void afficher_pyramide(Liste *liste) {
+    int total_general = total_victimes(liste);
+    if (total_general == 0) {
+        printf("Aucune victime a afficher.\n");
+        return;
+    }
+
+    printf("\n====================================================================\n");
+    printf("                         PYRAMIDE DES AGES\n");
+    printf("====================================================================\n");
+    printf("        HOMMES         |  AGE  |         FEMMES\n");
+    printf("-----------------------+-------+-----------------------\n");
+
+    afficher_du_haut(liste->tete, total_general);
+
+    printf("====================================================================\n");
+}
+
+/* Libere toute la memoire de la liste */
+void liberer_liste(Liste *liste) {
+    Age *actuel = liste->tete;
+    while (actuel != NULL) {
+        Age *suivant = actuel->suivant;
+        free(actuel);
+        actuel = suivant;
+    }
+    liste->tete = NULL;
+}
 
