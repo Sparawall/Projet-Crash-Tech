@@ -1,173 +1,435 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
+#define MAX_BARRE 16
 
-typedef struct _age {
+/* ============================================================
+   STRUCTURES : 1 maillon = 1 age
+   ============================================================ */
+
+/*
+   Types d'usagers : 1 = Conducteur, 2 = Passager, 3 = Pieton
+   Genres (2)      : 0 = Homme, 1 = Femme (dans le CSV : 1 = Homme, 2 = Femme)
+   croise[type][g] : ex. croise[3][1] = femmes pietonnes
+*/
+typedef struct NoeudAge {
     int age;
     int total;
-    int hommes;
-    int femmes;
-    int type_usager[4]; /* 1: conducteur, 2: passager, 3: pieton */
-    struct _age *suivant;
-} Age;
+    int types[4];
+    int genres[2];
+    int croise[4][2];
+    struct NoeudAge *suivant;
+} NoeudAge;
 
-typedef struct _liste {
-    Age *tete;
-} Liste;
+typedef struct ListeAges {
+    NoeudAge *tete;
+} ListeAges;
 
-/* Cherche si l'age existe deja dans la liste */
-Age *chercher_age(Liste *liste, int age) {
-    Age *actuel = liste->tete;
-    while (actuel != NULL) {
-        if (actuel->age == age) {
-            return actuel;
+typedef struct ChoixAffichage {
+    int mode_stats;   /* 1 = par type d'usager, 2 = par genre */
+    int filtre_type;  /* 0 = tous, 1 = conducteur, 2 = passager, 3 = pieton */
+    int filtre_genre; /* 0 = tous, 1 = homme, 2 = femme */
+} ChoixAffichage;
+
+
+/* ============================================================
+   LISTE CHAINEE TRIEE PAR AGE
+   ============================================================ */
+
+NoeudAge *chercher_age(ListeAges *liste, int age) {
+    NoeudAge *courant = liste->tete;
+    while (courant != NULL) {
+        if (courant->age == age) {
+            return courant;
         }
-        actuel = actuel->suivant;
+        courant = courant->suivant;
     }
     return NULL;
 }
 
-/* Cree un nouveau chainon pour un age */
-Age *creer_chainon(int age) {
-    Age *nouveau = malloc(sizeof(Age));
-    if (nouveau == NULL) {
+NoeudAge *creer_noeud_age(int age) {
+    NoeudAge *n = malloc(sizeof(NoeudAge));
+    if (n == NULL) {
         return NULL;
     }
 
-    nouveau->age = age;
-    nouveau->total = 0;
-    nouveau->hommes = 0;
-    nouveau->femmes = 0;
-    nouveau->suivant = NULL;
+    n->age = age;
+    n->total = 0;
+    n->suivant = NULL;
 
-    for (int i = 0; i < 4; i++) {
-        nouveau->type_usager[i] = 0;
-    }
-
-    return nouveau;
-}
-
-/* Ajoute une victime dans la liste triee par age croissant */
-void ajouter_victime(Liste *liste, int age, int type, int genre) {
-    Age *noeud = chercher_age(liste, age);
-
-    if (noeud == NULL) {
-        noeud = creer_chainon(age);
-        if (noeud == NULL) {
-            return;
-        }
-
-        if (liste->tete == NULL || age < liste->tete->age) {
-            noeud->suivant = liste->tete;
-            liste->tete = noeud;
-        } else {
-            Age *actuel = liste->tete;
-            while (actuel->suivant != NULL && actuel->suivant->age < age) {
-                actuel = actuel->suivant;
-            }
-            noeud->suivant = actuel->suivant;
-            actuel->suivant = noeud;
+    for (int t = 0; t < 4; t++) {
+        n->types[t] = 0;
+        for (int g = 0; g < 2; g++) {
+            n->croise[t][g] = 0;
         }
     }
+    n->genres[0] = 0;
+    n->genres[1] = 0;
 
-    noeud->total++;
-    if (type >= 1 && type <= 3) {
-        noeud->type_usager[type]++;
-    }
-    if (genre == 1) {
-        noeud->hommes++;
-    } else if (genre == 2) {
-        noeud->femmes++;
-    }
-}
-
-/* Calcule le nombre total de victimes de toute la liste */
-int total_victimes(Liste *liste) {
-    int somme = 0;
-    Age *actuel = liste->tete;
-    while (actuel != NULL) {
-        somme += actuel->total;
-        actuel = actuel->suivant;
-    }
-    return somme;
-}
-
-/* Calcule combien de '#' afficher pour un pourcentage */
-int nb_caracteres(double pourcentage) {
-    int n = (int)(pourcentage / 5.0); /* 1 '#' pour 5% */
-    if (pourcentage > 0.0 && n == 0) {
-        n = 1;
-    }
-    if (n > LARGEUR_BARRE) {
-        n = LARGEUR_BARRE;
-    }
     return n;
 }
 
-/* Affiche une ligne de la pyramide */
-void afficher_ligne(Age *noeud, int total_general) {
-    double pct_h = (noeud->hommes * 100.0) / total_general;
-    double pct_f = (noeud->femmes * 100.0) / total_general;
-
-    int barres_h = nb_caracteres(pct_h);
-    int barres_f = nb_caracteres(pct_f);
-
-    /* Gauche : espaces puis '#' colles au centre */
-    for (int i = 0; i < LARGEUR_BARRE - barres_h; i++) {
-        printf(" ");
-    }
-    for (int i = 0; i < barres_h; i++) {
-        printf("#");
-    }
-
-    printf(" | %4d  | ", noeud->age);
-
-    /* Droite : '#' colles au centre puis espaces */
-    for (int i = 0; i < barres_f; i++) {
-        printf("#");
-    }
-    for (int i = 0; i < LARGEUR_BARRE - barres_f; i++) {
-        printf(" ");
-    }
-
-    printf(" | H: %2d (%4.1f%%) | F: %2d (%4.1f%%)\n",
-           noeud->hommes, pct_h, noeud->femmes, pct_f);
-}
-
-/* Parcours recursif pour afficher les plus grands ages en haut et les plus jeunes en bas */
-void afficher_du_haut(Age *noeud, int total_general) {
-    if (noeud == NULL) {
-        return;
-    }
-    afficher_du_haut(noeud->suivant, total_general);
-    afficher_ligne(noeud, total_general);
-}
-
-/* Affiche la pyramide complete */
-void afficher_pyramide(Liste *liste) {
-    int total_general = total_victimes(liste);
-    if (total_general == 0) {
-        printf("Aucune victime a afficher.\n");
+void inserer_noeud_trie(ListeAges *liste, NoeudAge *nouveau) {
+    if (liste->tete == NULL || nouveau->age < liste->tete->age) {
+        nouveau->suivant = liste->tete;
+        liste->tete = nouveau;
         return;
     }
 
-    printf("\n====================================================================\n");
-    printf("                         PYRAMIDE DES AGES\n");
-    printf("====================================================================\n");
-    printf("        HOMMES         |  AGE  |         FEMMES\n");
-    printf("-----------------------+-------+-----------------------\n");
-
-    afficher_du_haut(liste->tete, total_general);
-
-    printf("====================================================================\n");
+    NoeudAge *courant = liste->tete;
+    while (courant->suivant != NULL && courant->suivant->age < nouveau->age) {
+        courant = courant->suivant;
+    }
+    nouveau->suivant = courant->suivant;
+    courant->suivant = nouveau;
 }
 
-/* Libere toute la memoire de la liste */
-void liberer_liste(Liste *liste) {
-    Age *actuel = liste->tete;
-    while (actuel != NULL) {
-        Age *suivant = actuel->suivant;
-        free(actuel);
-        actuel = suivant;
+/* genre_csv : 1 = Homme, 2 = Femme */
+int ajouter_victime(ListeAges *liste, int age, int type, int genre_csv) {
+    if (age < 0 || type < 1 || type > 3) {
+        return 1;
+    }
+    if (genre_csv != 1 && genre_csv != 2) {
+        return 1;
+    }
+
+    int idx_genre = genre_csv - 1; /* 0 = Homme, 1 = Femme */
+
+    NoeudAge *n = chercher_age(liste, age);
+    if (n == NULL) {
+        n = creer_noeud_age(age);
+        if (n == NULL) {
+            return 0;
+        }
+        inserer_noeud_trie(liste, n);
+    }
+
+    n->total++;
+    n->types[type]++;
+    n->genres[idx_genre]++;
+    n->croise[type][idx_genre]++;
+
+    return 1;
+}
+
+void liberer_liste(ListeAges *liste) {
+    NoeudAge *courant = liste->tete;
+    while (courant != NULL) {
+        NoeudAge *suivant = courant->suivant;
+        free(courant);
+        courant = suivant;
     }
     liste->tete = NULL;
 }
 
+
+/* ============================================================
+   CHARGEMENT DES DONNEES (CSV OU EXEMPLES)
+   ============================================================ */
+
+int decouper_ligne_csv(char *ligne, char *cols[], int max_cols) {
+    int nb = 0;
+    char *debut = ligne;
+
+    for (int i = 0; ligne[i] != '\0'; i++) {
+        if (ligne[i] == '\n' || ligne[i] == '\r') {
+            ligne[i] = '\0';
+            break;
+        }
+    }
+
+    for (int i = 0; ; i++) {
+        if (ligne[i] == ';' || ligne[i] == '\0') {
+            if (nb < max_cols) {
+                cols[nb] = debut;
+                nb++;
+            }
+            if (ligne[i] == '\0') {
+                break;
+            }
+            ligne[i] = '\0';
+            debut = &ligne[i + 1];
+        }
+    }
+
+    return nb;
+}
+
+int charger_csv(const char *nom_fichier, ListeAges *liste) {
+    FILE *f = fopen(nom_fichier, "r");
+    if (f == NULL) {
+        printf("Erreur : impossible d'ouvrir '%s'.\n", nom_fichier);
+        return 0;
+    }
+
+    char ligne[4096];
+    char *cols[9];
+    int nb_lignes = 0;
+
+    while (fgets(ligne, sizeof(ligne), f) != NULL) {
+        if (decouper_ligne_csv(ligne, cols, 9) < 9) {
+            continue;
+        }
+
+        int annee = atoi(cols[0]);
+        int type = atoi(cols[4]);
+        int genre = atoi(cols[6]);
+        int naissance = atoi(cols[7]);
+
+        if (naissance <= 0 || naissance > annee) {
+            continue;
+        }
+
+        int age = annee - naissance;
+        if (!ajouter_victime(liste, age, type, genre)) {
+            printf("Erreur : memoire insuffisante.\n");
+            fclose(f);
+            return 0;
+        }
+        nb_lignes++;
+    }
+
+    fclose(f);
+    printf("%d victimes chargees depuis '%s'.\n", nb_lignes, nom_fichier);
+    return 1;
+}
+
+void charger_exemples(ListeAges *liste) {
+    /* (age, type_usager, genre_csv : 1 = Homme, 2 = Femme) */
+    ajouter_victime(liste, 20, 2, 2);
+    ajouter_victime(liste, 23, 1, 2);
+    ajouter_victime(liste, 25, 1, 1);
+    ajouter_victime(liste, 27, 3, 2);
+    ajouter_victime(liste, 41, 1, 1);
+    ajouter_victime(liste, 65, 3, 2);
+    printf("Donnees d'exemple chargees (6 victimes).\n");
+}
+
+
+/* ============================================================
+   CE QUE L'UTILISATEUR VEUT VOIR
+   ============================================================ */
+
+int lire_nombre(const char *question, int min, int max) {
+    char buf[100];
+    int val;
+
+    while (1) {
+        printf("%s", question);
+        if (fgets(buf, sizeof(buf), stdin) == NULL) {
+            return -1;
+        }
+        if (sscanf(buf, " %d", &val) == 1 && val >= min && val <= max) {
+            return val;
+        }
+        printf("Choix invalide : entrez un nombre entre %d et %d.\n", min, max);
+    }
+}
+
+int demander_choix_utilisateur(ChoixAffichage *choix) {
+    printf("\n============================================================\n");
+    printf("   QUE VOULEZ-VOUS AFFICHER ?\n");
+    printf("============================================================\n");
+
+    printf("1. Type de statistique :\n");
+    printf("   1 -> Par type d'usager (conducteur, passager, pieton)\n");
+    printf("   2 -> Par genre (homme, femme)\n");
+    choix->mode_stats = lire_nombre("Votre choix (1 ou 2) : ", 1, 2);
+    if (choix->mode_stats == -1) return 0;
+
+    printf("\n2. Filtre type d'usager :\n");
+    printf("   0 -> Tous   1 -> Conducteur   2 -> Passager   3 -> Pieton\n");
+    choix->filtre_type = lire_nombre("Votre choix (0 a 3) : ", 0, 3);
+    if (choix->filtre_type == -1) return 0;
+
+    printf("\n3. Filtre genre :\n");
+    printf("   0 -> Tous   1 -> Homme   2 -> Femme\n");
+    choix->filtre_genre = lire_nombre("Votre choix (0 a 2) : ", 0, 2);
+    if (choix->filtre_genre == -1) return 0;
+
+    return 1;
+}
+
+
+/* ============================================================
+   CALCULS ET PYRAMIDE DES AGES
+   ============================================================ */
+
+/* genre_filtre : 0 = tous, 1 = homme (idx 0), 2 = femme (idx 1) */
+int compter_noeud(NoeudAge *n, int type, int genre_filtre) {
+    if (type > 0 && genre_filtre > 0) {
+        return n->croise[type][genre_filtre - 1];
+    }
+    if (type > 0) {
+        return n->types[type];
+    }
+    if (genre_filtre > 0) {
+        return n->genres[genre_filtre - 1];
+    }
+    return n->total;
+}
+
+int calculer_total_filtre(ListeAges *liste, ChoixAffichage choix) {
+    int total = 0;
+    NoeudAge *courant = liste->tete;
+
+    while (courant != NULL) {
+        if (choix.mode_stats == 1) {
+            int deb = (choix.filtre_type == 0) ? 1 : choix.filtre_type;
+            int fin = (choix.filtre_type == 0) ? 3 : choix.filtre_type;
+            for (int t = deb; t <= fin; t++) {
+                total += compter_noeud(courant, t, choix.filtre_genre);
+            }
+        } else {
+            int deb = (choix.filtre_genre == 0) ? 1 : choix.filtre_genre;
+            int fin = (choix.filtre_genre == 0) ? 2 : choix.filtre_genre;
+            for (int g = deb; g <= fin; g++) {
+                total += compter_noeud(courant, choix.filtre_type, g);
+            }
+        }
+        courant = courant->suivant;
+    }
+
+    return total;
+}
+
+int nb_diezes(double pct) {
+    int n = (int)(pct / 5.0);
+    if (pct > 0.0 && n == 0) {
+        n = 1;
+    }
+    if (n > MAX_BARRE) {
+        n = MAX_BARRE;
+    }
+    return n;
+}
+
+void afficher_ligne_type(NoeudAge *n, int total_global, ChoixAffichage choix) {
+    const char *noms[4] = { "", "Conducteur", "Passager", "Pieton" };
+    int deb = (choix.filtre_type == 0) ? 1 : choix.filtre_type;
+    int fin = (choix.filtre_type == 0) ? 3 : choix.filtre_type;
+
+    int somme = 0;
+    for (int t = deb; t <= fin; t++) {
+        somme += compter_noeud(n, t, choix.filtre_genre);
+    }
+    if (somme == 0) {
+        return;
+    }
+
+    printf("\nAge %3d ans :\n", n->age);
+    for (int t = deb; t <= fin; t++) {
+        int nb = compter_noeud(n, t, choix.filtre_genre);
+        double pct = (nb * 100.0) / total_global;
+        int d = nb_diezes(pct);
+
+        printf("  %-10s | ", noms[t]);
+        for (int i = 0; i < d; i++) printf("#");
+        for (int i = d; i < MAX_BARRE; i++) printf(" ");
+        printf(" | %4d (%5.1f%%)\n", nb, pct);
+    }
+}
+
+void afficher_ligne_genre(NoeudAge *n, int total_global, ChoixAffichage choix) {
+    int h = (choix.filtre_genre == 2) ? 0 : compter_noeud(n, choix.filtre_type, 1);
+    int f = (choix.filtre_genre == 1) ? 0 : compter_noeud(n, choix.filtre_type, 2);
+
+    if (h == 0 && f == 0) {
+        return;
+    }
+
+    double pct_h = (h * 100.0) / total_global;
+    double pct_f = (f * 100.0) / total_global;
+    int bh = nb_diezes(pct_h);
+    int bf = nb_diezes(pct_f);
+
+    for (int i = 0; i < MAX_BARRE - bh; i++) printf(" ");
+    for (int i = 0; i < bh; i++) printf("#");
+
+    printf(" | %3d | ", n->age);
+
+    for (int i = 0; i < bf; i++) printf("#");
+    for (int i = bf; i < MAX_BARRE; i++) printf(" ");
+
+    printf(" | H: %3d (%4.1f%%) | F: %3d (%4.1f%%)\n", h, pct_h, f, pct_f);
+}
+
+void afficher_noeuds_haut_en_bas(NoeudAge *n, int total_global, ChoixAffichage choix) {
+    if (n == NULL) {
+        return;
+    }
+    afficher_noeuds_haut_en_bas(n->suivant, total_global, choix);
+
+    if (choix.mode_stats == 1) {
+        afficher_ligne_type(n, total_global, choix);
+    } else {
+        afficher_ligne_genre(n, total_global, choix);
+    }
+}
+
+void afficher_pyramide(ListeAges *liste, ChoixAffichage choix) {
+    int total_global = calculer_total_filtre(liste, choix);
+    if (total_global == 0) {
+        printf("\nAucune victime ne correspond a ces filtres.\n");
+        return;
+    }
+
+    printf("\n============================================================\n");
+    printf("PYRAMIDE DES AGES (Total filtre : %d)\n", total_global);
+    printf("============================================================\n");
+
+    if (choix.mode_stats == 2) {
+        for (int i = 0; i < MAX_BARRE - 6; i++) printf(" ");
+        printf("HOMMES | AGE | FEMMES\n");
+    }
+
+    afficher_noeuds_haut_en_bas(liste->tete, total_global, choix);
+    printf("\n============================================================\n");
+}
+
+
+/* ============================================================
+   MENU ET MAIN
+   ============================================================ */
+
+void menu_age_data(ListeAges *liste) {
+    ChoixAffichage premier_choix = { 2, 0, 0 };
+    afficher_pyramide(liste, premier_choix);
+
+    while (1) {
+        printf("\n--- MENU AGE_DATA ---\n");
+        printf("1. Choisir les statistiques et filtres\n");
+        printf("0. Quitter\n");
+
+        int action = lire_nombre("Votre choix : ", 0, 1);
+        if (action <= 0) {
+            break;
+        }
+
+        ChoixAffichage choix;
+        if (!demander_choix_utilisateur(&choix)) {
+            break;
+        }
+
+        afficher_pyramide(liste, choix);
+    }
+}
+
+int main(int argc, char *argv[]) {
+    ListeAges liste;
+    liste.tete = NULL;
+
+    if (argc >= 3 && strcmp(argv[1], "AGE_DATA") == 0) {
+        if (!charger_csv(argv[2], &liste)) {
+            liberer_liste(&liste);
+            return 1;
+        }
+    } else {
+        charger_exemples(&liste);
+    }
+
+    menu_age_data(&liste);
+    liberer_liste(&liste);
+    return 0;
+}
