@@ -4,15 +4,14 @@
 
 #define MAX_BARRE 16
 
-/* ============================================================
-   STRUCTURES 
-   ============================================================ */
+ //STRUCTURES 
+   
 
-/*
+
    Types d'usagers : 1 = Conducteur, 2 = Passager, 3 = Pieton
    Genres (2)      : 0 = Homme, 1 = Femme (dans le CSV : 1 = Homme, 2 = Femme)
    croise[type][g] : ex. croise[3][1] = femmes pietonnes
-*/
+
 typedef struct NoeudAge {
     int age;
     int total;
@@ -32,10 +31,8 @@ typedef struct ChoixAffichage {
     int filtre_genre; /* 0 = tous, 1 = homme, 2 = femme */
 } ChoixAffichage;
 
-
-/* ============================================================
-   LISTE CHAINEE TRIEE PAR AGE
-   ============================================================ */
+//LISTE CHAINEE TRIEE PAR AGE
+ 
 
 NoeudAge *chercher_age(ListeAges *liste, int age) {
     NoeudAge *courant = liste->tete;
@@ -127,9 +124,9 @@ void liberer_liste(ListeAges *liste) {
 
 
 
-/* ============================================================
-   CE QUE L'UTILISATEUR VEUT VOIR
-   ============================================================ */
+
+//CE QUE L'UTILISATEUR VEUT VOIR
+
 
 int lire_nombre(const char *question, int min, int max) {
     char buf[100];
