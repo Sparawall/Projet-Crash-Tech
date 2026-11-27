@@ -5,7 +5,7 @@
 #define MAX_BARRE 16
 
 /* ============================================================
-   STRUCTURES : 1 maillon = 1 age
+   STRUCTURES 
    ============================================================ */
 
 /*
@@ -116,7 +116,8 @@ int ajouter_victime(ListeAges *liste, int age, int type, int genre_csv) {
 void liberer_liste(ListeAges *liste) {
     NoeudAge *courant = liste->tete;
     while (courant != NULL) {
-        NoeudAge *suivant = courant->suivant;
+        NoeudAge *suivant = courant->suivant; de statistique :\n");
+    printf("   1 -> Par typ
         free(courant);
         courant = suivant;
     }
@@ -169,5 +170,8 @@ int demander_choix_utilisateur(ChoixAffichage *choix) {
 
     return 1;
 }
+
+
+
 
 
